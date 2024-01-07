@@ -1,5 +1,5 @@
 import axios from "axios";
-import {useStateContext} from "./context/ContextProvider.jsx";
+
 
 const axiosClient = axios.create({
   baseURL: `${import.meta.env.VITE_API_BASE_URL}/api`
@@ -18,7 +18,7 @@ axiosClient.interceptors.response.use((response) => {
   if (response.status === 401) {
     localStorage.removeItem('ACCESS_TOKEN')
   } else if (response.status === 404) {
-    
+
     }
 
   throw error;
